@@ -58,7 +58,7 @@ gulp.task(
         .pipe(coveralls());
   });
 
-gulp.task('watch', () => gulp.watch(['api.js', 'lib/**/*.js', 'test/**'], ['test']));
+gulp.task('watch', () => gulp.watch(['api.js', 'lib/**/*.js', 'tests/**'], ['test']));
 
 gulp.task('nsp', cb => nsp({ package: path.resolve('package.json') }, cb));
 
