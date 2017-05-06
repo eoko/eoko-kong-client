@@ -1,0 +1,61 @@
+{
+  "name": "kong-admin-client",
+  "version": "0.0.0",
+  "description": "A simple and dumb kong api wrapper",
+  "homepage": "",
+  "author": {
+    "name": "Romain DARY <romain.dary@eoko.fr>",
+    "email": "romain.dary@eoko.fr",
+    "url": "http://eoko.fr"
+  },
+  "files": [
+    "libs"
+  ],
+  "main": "index.js",
+  "keywords": [
+    "kong",
+    "api",
+    "client"
+  ],
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "del": "^2.0.2",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-config-xo-space": "^0.14.0",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^1.5.5",
+    "eslint-plugin-react": "^5.2.2",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-coveralls": "^0.1.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^1.0.0",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-mocha": "^2.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-plumber": "^1.0.0",
+    "isparta": "^4.0.0",
+    "mocha": "^2.5.3"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": "github.com:eoko/kong-admin-client",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "request-promise": "^4.0.2",
+    "winston": "^2.2.0",
+    "winston-sentry": "latest",
+    "debug": "latest"
+  }
+}
