@@ -1,13 +1,9 @@
 {
-  "name": "eoko-kong-client",
+  "name": "@eoko/kong-client",
   "version": "1.0.0",
   "description": "A simple and dumb kong api wrapper",
   "homepage": "",
-  "author": {
-    "name": "Romain DARY <romain.dary@eoko.fr>",
-    "email": "romain.dary@eoko.fr",
-    "url": "http://eoko.fr"
-  },
+  "author": "Romain DARY <romain.dary@eoko.fr> (http://eoko.fr)",
   "files": [
     "libs"
   ],
@@ -45,7 +41,10 @@
       "mocha": true
     }
   },
-  "repository": "github.com:eoko/kong-admin-client",
+  "repository": {
+    "type": "git",
+    "url": "github.com:eoko/kong-admin-client"
+  },
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
@@ -55,5 +54,8 @@
     "chai-as-promised": "^6.0.0",
     "debug": "latest",
     "request-promise": "^4.0.2"
+  },
+  "directories": {
+    "test": "tests"
   }
 }
