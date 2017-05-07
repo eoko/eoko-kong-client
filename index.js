@@ -33,10 +33,11 @@ Kong.prototype.request = function buildRequest(method, path, body) {
     method,
     uri: this.config.baseUrl + path,
     json: true,
+    headers: {},
   };
 
   if (this.config.apiKey) {
-    options.headers[this.apiKeyName] = this.config.apiKey;
+    options.headers[this.config.apiKeyName] = this.config.apiKey;
   }
 
   if (method === 'POST' || method === 'PUT' || method === 'PATCH') {
