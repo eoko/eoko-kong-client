@@ -1,10 +1,13 @@
 const request = require('request-promise');
 const debug   = require('debug')('kong-admin-client');
 
-const Kong = function kong(baseUrl, opts = {}) {
-  this.config = { baseUrl };
-  this.config.apiKey = opts.apiKey || null;
-  this.config.apiKeyName = opts.apiKeyName || 'apikey';
+const Kong = function kong(baseUrlOrOpts, opts = {}) {
+  if (baseUrlOrOpts instanceof Object) {
+    this.config = baseUrlOrOpts;
+  } else {
+    this.config = { baseUrl: baseUrlOrOpts };
+    Object.assign(this.config, opts);
+  }
   return this;
 };
 
