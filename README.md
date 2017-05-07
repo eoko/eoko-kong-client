@@ -24,7 +24,7 @@ You can also use `Kong` for proxiting the admin api and add security :
 
 ```js
 const Kong = require('@eoko/kong-client');
-const kong = new Kong('http://localhost:8000/admin', { apiKey: 'sample', apiKeyName: 'apikey);
+const kong = new Kong('http://localhost:8000/admin',{ apiKey: 'sample', apiKeyName : 'apikey' });
 
 kong
   .get('/consumers')
