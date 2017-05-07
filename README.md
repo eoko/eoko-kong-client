@@ -4,14 +4,20 @@
 ## Installation
 
 ```sh
-$ npm install --save kong-admin-client
+$ npm install --save @eoko/kong-client
+$ yarn add @eoko/kong-client
 ```
 
 ## Usage
 
 ```js
-const Kong = require('kong-admin-client');
-const kong = new Kong('http://kong.url:8001','123214213213131321312');
+const Kong = require('@eoko/kong-client');
+const kong = new Kong('http://localhost:8001');
+
+kong
+  .get('/consumers')
+  .then(res => console.log(res))
+  .catch(err => console.log(err));
 ```
 ## License
 
