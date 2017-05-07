@@ -1,8 +1,10 @@
 const request = require('request-promise');
 const debug   = require('debug')('kong-admin-client');
 
-const Kong = function kong(baseUrl, apiKey) {
-  this.config = { baseUrl, apiKey };
+const Kong = function kong(baseUrl, opts = {}) {
+  this.config = { baseUrl };
+  this.config.apiKey = opts.apiKey || null;
+  this.config.apiKeyName = opts.apiKeyName || 'apikey';
   return this;
 };
 
@@ -34,9 +36,7 @@ Kong.prototype.request = function buildRequest(method, path, body) {
   };
 
   if (this.config.apiKey) {
-    options.headers = {
-      apikey: this.config.apiKey,
-    };
+    options.headers[this.apiKeyName] = this.config.apiKey;
   }
 
   if (method === 'POST' || method === 'PUT' || method === 'PATCH') {

@@ -19,6 +19,19 @@ kong
   .then(res => console.log(res))
   .catch(err => console.log(err));
 ```
+
+You can also use `Kong` for proxiting the admin api and add security :
+
+```js
+const Kong = require('@eoko/kong-client');
+const kong = new Kong('http://localhost:8000/admin', { apiKey: 'sample', apiKeyName: 'apikey);
+
+kong
+  .get('/consumers')
+  .then(res => console.log(res))
+  .catch(err => console.log(err));
+```
+
 ## License
 
 MIT © [Romain DARY &lt;romain.dary@eoko.fr&gt;](http://eoko.fr)
