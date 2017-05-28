@@ -11,6 +11,11 @@ const Kong = function kong(baseUrlOrOpts, opts = {}) {
   return this;
 };
 
+Kong.prototype.setBaseUrl = function setBaseUrl(url) {
+  this.config.baseUrl = url;
+  return this;
+}
+
 Kong.prototype.get = function getRequest(path) {
   return this.request('GET', path);
 };
@@ -51,5 +56,12 @@ Kong.prototype.request = function buildRequest(method, path, body) {
 
   return request(options);
 };
+
+Kong.getKong = function getKong () {
+  if(!this.singleton) {
+    this.singleton = new Kong();
+  }
+  return this.singleton;
+}
 
 module.exports = Kong;
