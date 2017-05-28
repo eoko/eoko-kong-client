@@ -1,6 +1,6 @@
 {
   "name": "@eoko/kong-client",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A simple and dumb kong api wrapper",
   "homepage": "",
   "author": "Romain DARY <romain.dary@eoko.fr> (http://eoko.fr)",
